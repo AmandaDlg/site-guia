@@ -97,5 +97,77 @@
         }
     </script>
 
+    <div id="modal-golpe" class="modal-overlay" role="dialog" aria-labelledby="modal-titulo" aria-modal="true" style="display: none;">
+        <div class="modal-conteudo">
+            <h2 id="modal-titulo">🚨 O que fazer se você caiu em um golpe?</h2>
+            
+            <ol class="passos-modal">
+                <li>
+                    <strong>1. Fale com seu banco imediatamente:</strong> 
+                    Ligue para o número que está atrás do seu cartão e peça o bloqueio da conta ou do PIX realizado.
+                </li>
+                <li>
+                    <strong>2. Guarde todas as provas:</strong> 
+                    Tire fotos da tela (prints) das conversas de WhatsApp, do comprovante do PIX e dos números de telefone envolvidos.
+                </li>
+                <li>
+                    <strong>3. Faça um Boletim de Ocorrência (B.O.):</strong> 
+                    Você pode fazer isso pela internet (Delegacia Eletrônica do seu estado) ou pedir ajuda a um familiar para ir até a delegacia mais próxima.
+                </li>
+                <li>
+                    <strong>4. Avise seus amigos e familiares:</strong> 
+                    Diga a eles que criminosos estão usando seu nome para que ninguém mais envie dinheiro.
+                </li>
+            </ol>
+
+            <button class="btn-fechar-modal" onclick="fecharModal()" aria-label="Fechar janela de alerta">
+                Entendi e quero Fechar X
+            </button>
+        </div>
+    </div>
+
+    <script>
+        let .tamanhoAtual = 100;
+        function alterarFonte(direcao) {
+            if (direcao === 1 && tamanhoAtual < 150) {
+                tamanhoAtual += 10;
+            } else if (direcao === -1 && tamanhoAtual > 80) {
+                tamanhoAtual -= 10;
+            }
+            document.documentElement.style.fontSize = tamanhoAtual + "%";
+        }
+
+        function alternarTema() {
+            const html = document.documentElement;
+            const botao = document.getElementById('btn-tema');
+            
+            if (html.getAttribute('data-tema') === 'escuro') {
+                html.removeAttribute('data-tema');
+                botao.innerHTML = 'Modo Escuro 🌙';
+            } else {
+                html.setAttribute('data-tema', 'escuro');
+                botao.innerHTML = 'Modo Claro ☀️';
+            }
+        }
+
+        /* NOVAS FUNÇÕES: Controlar o Modal */
+        function abrirModal() {
+            document.getElementById('modal-golpe').style.display = 'flex';
+            // Foca no botão de fechar para ajudar a acessibilidade por teclado
+            setTimeout(() => document.querySelector('.btn-fechar-modal').focus(), 100);
+        }
+
+        function fecharModal() {
+            document.getElementById('modal-golpe').style.display = 'none';
+        }
+        
+        // Modificar o link de denúncia para também abrir o modal como instrução extra
+        // Você pode chamar a função abrirModal() de onde preferir! 
+        // Exemplo: se quiser que o modal abra ao carregar a página para alertar o usuário, descomente a linha abaixo:
+        // window.onload = abrirModal;
+    </script>
+</body>
+</html>
+
 </body>
 </html>
