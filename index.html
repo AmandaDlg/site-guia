@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia de Segurança Digital - Melhor Idade</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="barra-acessibilidade" role="complementary" aria-label="Controles de Acessibilidade">
+        <div class="grupo-controles">
+            <span>Tamanho do texto:</span>
+            <button class="btn-acessibilidade" onclick="alterarFonte(1)" aria-label="Aumentar letra">A +</button>
+            <button class="btn-acessibilidade" onclick="alterarFonte(-1)" aria-label="Diminuir letra">A -</button>
+        </div>
+        <div class="grupo-controles">
+            <span>Visualização:</span>
+            <button class="btn-acessibilidade" id="btn-tema" onclick="alternarTema()">Modo Escuro 🌙</button>
+        </div>
+    </div>
+
+    <div class="container">
+        
+        <header role="banner">
+            <h1>Guia de Segurança na Internet</h1>
+            <p>Dicas simples e fáceis para navegar com tranquilidade</p>
+        </header>
+
+        <section class="secao-urgente">
+            <h2>Caiu em um golpe? Peça ajuda agora!</h2>
+            <p>Se você foi vítima de uma fraude financeira ou golpe virtual, clique no botão abaixo para registrar o ocorrido na plataforma oficial de defesa do consumidor.</p>
+            
+            <a href="https://www.consumidor.gov.br/" target="_blank" class="btn-urgente" rel="noopener noreferrer">
+                🚨 Denunciar Golpe / Pedir Ajuda
+            </a>
+            
+            <p class="aviso-policia">
+                📞 Se houver ameaça direta ou necessidade de socorro imediato, ligue para a <strong>Polícia Militar (190)</strong>.
+            </p>
+        </section>
+
+        <main role="main">
+            <section class="card-dica">
+                <h2>1. Criando Senhas Seguras</h2>
+                <p>Evite usar sua data de nascimento, nome de netos ou sequências simples como "123456".</p>
+                <div class="lembrete">
+                    💡 Dica de Ouro: Misture letras maiúsculas, números e símbolos (como @ ou #). Anote suas senhas em um caderno físico guardado em um lugar seguro na sua casa.
+                </div>
+            </section>
+
+            <section class="card-dica alerta">
+                <h2>2. Cuidado com Mensagens Urgentes</h2>
+                <p>Se receber uma mensagem no WhatsApp de um parente pedindo dinheiro urgente porque "mudou de número", não envie imediatamente.</p>
+                <div class="lembrete">
+                    ⚠️ Atenção: Ligue para o número antigo do seu parente ou faça uma chamada de vídeo para confirmar se é ele mesmo antes de fazer qualquer transferência ou PIX.
+                </div>
+            </section>
+
+            <section class="card-dica">
+                <h2>3. Não Clique em Links Desconhecidos</h2>
+                <p>Bancos e empresas não costumam enviar links SMS pedindo para você atualizar seus dados ou cancelar problemas.</p>
+                <div class="lembrete">
+                    💡 Dica de Ouro: Na dúvida, não clique. Vá até a agência do banco ou ligue no número que está atrás do seu cartão de crédito.
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>A internet é um lugar maravilhoso quando navegamos com cuidado. Proteja seus dados!</p>
+        </footer>
+
+    </div>
+
+    <script>
+        let tamanhoAtual = 100;
+        function alterarFonte(direcao) {
+            if (direcao === 1 && tamanhoAtual < 150) {
+                tamanhoAtual += 10;
+            } else if (direcao === -1 && tamanhoAtual > 80) {
+                tamanhoAtual -= 10;
+            }
+            document.documentElement.style.fontSize = tamanhoAtual + "%";
+        }
+
+        function alternarTema() {
+            const html = document.documentElement;
+            const botao = document.getElementById('btn-tema');
+            
+            if (html.getAttribute('data-tema') === 'escuro') {
+                html.removeAttribute('data-tema');
+                botao.innerHTML = 'Modo Escuro 🌙';
+            } else {
+                html.setAttribute('data-tema', 'escuro');
+                botao.innerHTML = 'Modo Claro ☀️';
+            }
+        }
+    </script>
+
+</body>
+</html>

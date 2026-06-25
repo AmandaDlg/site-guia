@@ -1,0 +1,220 @@
+/* Variáveis de Cores - Modo Claro (Padrão) */
+:root {
+    --cor-fundo: #F4F6F9;
+    --cor-card: #FFFFFF;
+    --cor-texto: #1A1A1A;
+    --cor-primaria: #0056B3;
+    --cor-alerta: #D32F2F;
+    --cor-alerta-fundo: #FFF5F5;
+    --cor-barra-acessibilidade: #333333;
+    --cor-texto-barra: #FFFFFF;
+    --fonte-principal: Arial, sans-serif;
+}
+
+/* Variáveis de Cores - Modo Escuro */
+[data-tema="escuro"] {
+    --cor-fundo: #121212;
+    --cor-card: #1E1E1E;
+    --cor-texto: #E0E0E0;
+    --cor-primaria: #3792FF;
+    --cor-alerta: #FF6B6B;
+    --cor-alerta-fundo: #2D1A1A;
+    --cor-barra-acessibilidade: #000000;
+    --cor-texto-barra: #FFFFFF;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+html {
+    font-size: 100%;
+}
+
+body {
+    font-family: var(--fonte-principal);
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    line-height: 1.6;
+    padding: 0 20px 20px 20px;
+}
+
+/* Barra Superior de Acessibilidade */
+.barra-acessibilidade {
+    background-color: var(--cor-barra-acessibilidade);
+    color: var(--cor-texto-barra);
+    padding: 10px 20px;
+    margin: 0 -20px 25px -20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.grupo-controles {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.barra-acessibilidade span {
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.btn-acessibilidade {
+    background-color: #FFFFFF;
+    color: #1A1A1A;
+    border: 2px solid #000000;
+    padding: 8px 16px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.btn-acessibilidade:hover {
+    background-color: #E6E6E6;
+}
+
+/* Cabeçalho */
+header {
+    text-align: center;
+    background-color: var(--cor-primaria);
+    color: white;
+    padding: 30px 20px;
+    border-radius: 12px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+header h1 {
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+/* Seção de Ajuda de Emergência */
+.secao-urgente {
+    background-color: var(--cor-alerta-fundo);
+    border: 3px solid var(--cor-alerta);
+    border-radius: 12px;
+    padding: 25px;
+    margin-bottom: 30px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(211, 47, 47, 0.15);
+}
+
+.secao-urgente h2 {
+    color: var(--cor-alerta);
+    font-size: 1.7rem;
+    margin-bottom: 10px;
+}
+
+.secao-urgente p {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+}
+
+.btn-urgente {
+    display: inline-block;
+    background-color: var(--cor-alerta);
+    color: white !important;
+    text-decoration: none;
+    padding: 15px 30px;
+    font-size: 1.4rem;
+    font-weight: bold;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    transition: transform 0.1s, background-color 0.2s;
+}
+
+.btn-urgente:hover {
+    background-color: #B32424;
+    transform: scale(1.02);
+}
+
+.aviso-policia {
+    margin-top: 15px !important;
+    font-size: 1.3rem;
+    background-color: rgba(0, 0, 0, 0.05);
+    padding: 10px;
+    border-radius: 6px;
+    display: inline-block;
+}
+
+[data-tema="escuro"] .aviso-policia {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Conteúdo Principal */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.card-dica {
+    background-color: var(--cor-card);
+    border-left: 8px solid var(--cor-primaria);
+    border-radius: 8px;
+    padding: 25px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.card-dica.alerta {
+    border-left-color: var(--cor-alerta);
+}
+
+.card-dica h2 {
+    font-size: 1.6rem;
+    color: var(--cor-primaria);
+    margin-bottom: 12px;
+}
+
+.card-dica p {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+}
+
+/* Blocos de Destaque */
+.lembrete {
+    background-color: #E6F0FA;
+    color: #003366;
+    padding: 15px;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+[data-tema="escuro"] .lembrete {
+    background-color: #1A2633;
+    color: #8AB4F8;
+}
+
+.card-dica.alerta .lembrete {
+    background-color: #FCE8E6;
+    color: #A81C1C;
+}
+
+[data-tema="escuro"] .card-dica.alerta .lembrete {
+    background-color: #3C1E1E;
+    color: #FF8A8A;
+}
+
+footer {
+    text-align: center;
+    margin-top: 40px;
+    padding: 20px;
+    font-size: 1.1rem;
+    color: var(--cor-texto);
+    opacity: 0.8;
+}
